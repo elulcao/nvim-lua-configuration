@@ -69,15 +69,6 @@ return packer.startup(function(use)
 	use("akinsho/toggleterm.nvim") -- toggle terminal
 	use("vimwiki/vimwiki") -- vimwiki
 
-	--use('Raimondi/delimitMate') -- auto close brackets
-	--use('Yggdroot/indentLine') -- indent lines
-	--use('wadackel/vim-dogrun') -- run code
-	--use('google/vim-maktaba') -- maktaba
-	--use('google/vim-codefmt') -- codefmt
-	--use('google/vim-glaive') -- glaive
-	--use('drewtempelmeyer/palenight.vim') -- palenight
-	--use('sheerun/vim-polyglot') -- polyglot
-
 	-- lsp servers, linters, formatters
 	use("williamboman/mason.nvim") -- lsp server for Mason
 	use("williamboman/mason-lspconfig.nvim") -- lspconfig for Mason
