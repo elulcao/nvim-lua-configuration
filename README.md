@@ -13,3 +13,6 @@
 NeoVim Lua configuration is a simple set of files to configure NeoVim with ease.
 
 Feel free to use it as a base for your own configuration.
+
+<p align="center" style="margin-bottom: 0px !important;">
+  <img width="1000" src=".assets/terminal.png" alt="terminal and neovim" align="center">
