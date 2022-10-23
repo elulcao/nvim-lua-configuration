@@ -71,8 +71,6 @@ return packer.startup(function(use)
 
 	--use('Raimondi/delimitMate') -- auto close brackets
 	--use('Yggdroot/indentLine') -- indent lines
-	--use('SirVer/ultisnips') -- snippets
-	--use('honza/vim-snippets') -- snippets
 	--use('wadackel/vim-dogrun') -- run code
 	--use('google/vim-maktaba') -- maktaba
 	--use('google/vim-codefmt') -- codefmt
