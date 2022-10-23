@@ -11,7 +11,6 @@ require("core.colorscheme")
 
 -- plugin configuration
 require("plugins.nvim-tree")
---require("plugins.ale")
 require("plugins.tagbar")
 require("plugins.telescope")
 require("plugins.copilot")
