@@ -15,13 +15,10 @@ nullls.setup({
 		formatting.stylua,
 		formatting.eslint_d,
 		formatting.shfmt,
-		formatting.lua_format,
 		formatting.gofumpt,
 		formatting.gofmt,
-		formatting.rustfmt,
 		formatting.goimports,
 		diagnostics.shellcheck,
-		diagnostics.luacheck,
 		diagnostics.golangci_lint,
 	},
 	-- configure on save

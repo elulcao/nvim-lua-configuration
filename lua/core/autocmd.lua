@@ -7,12 +7,12 @@ aucmd("BufEnter", {
 })
 
 aucmd("FileType, make", {
-	command = "setlocal noexpandtab",
+	command = "set noexpandtab",
 })
 
 aucmd("BufNewFile, BufRead", {
 	pattern = "CMakeLists.txt",
-	command = "setlocal filetype=cmake",
+	command = "set filetype=cmake",
 })
 
 aucmd("BufWritePre", {
@@ -25,9 +25,9 @@ aucmd("GuiEnter", {
 
 aucmd("BufRead, BufNewFile", {
 	pattern = "*.go",
-	command = "setlocal tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab",
+	command = "set tabstop=4 shiftwidth=4 softtabstop=4 colorcolumn=79 noexpandtab",
 })
 
 aucmd("FileType, python", {
-	command = "setlocal tabstop=8 shiftwidth=4 colorcolumn=79 expandtab",
+	command = "set tabstop=4 shiftwidth=4 softtabstop=4 colorcolumn=79 expandtab",
 })

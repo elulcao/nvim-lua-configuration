@@ -6,6 +6,7 @@ if not setup then
 end
 
 treesitter.setup({
+	run = ":TSUpdate",
 	with_sync = true,
 	highlight = {
 		enable = true,
