@@ -43,7 +43,6 @@ return packer.startup(function(use)
 	use("nvim-telescope/telescope-fzf-native.nvim") -- fzf native for telescope
 	use("nvim-tree/nvim-web-devicons") -- icons for nvim-tree
 	use("nvim-lua/plenary.nvim") -- plenary for telescope
-	use("nvim-treesitter/nvim-treesitter") -- treesitter
 
 	use("tpope/vim-fugitive") -- git wrapper
 	use("tpope/vim-rhubarb") -- git wrapper
@@ -54,7 +53,6 @@ return packer.startup(function(use)
 	use("vim-airline/vim-airline") -- airline status bar
 	use("vim-scripts/ReplaceWithRegister") -- replace with register
 
-	use("christoomey/vim-tmux-navigator")
 	use("szw/vim-maximizer") -- maximize current window
 	use("fatih/vim-go") -- go support
 	use("airblade/vim-gitgutter") -- git gutter
@@ -94,10 +92,16 @@ return packer.startup(function(use)
 
 	-- auto closing
 	use("windwp/nvim-autopairs") -- autopairs
-	use("windwp/nvim-ts-autotag") -- autotag
+	use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" }) -- autotag
 
 	-- git signs
 	use("lewis6991/gitsigns.nvim") -- gitsigns
+
+	-- tmux
+	use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
+
+	-- treesitter configuration
+	use("nvim-treesitter/nvim-treesitter")
 
 	if packer_bootstrap then
 		require("packer")
