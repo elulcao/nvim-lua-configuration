@@ -57,7 +57,7 @@ return packer.startup(function(use)
 	use("fatih/vim-go") -- go support
 	use("airblade/vim-gitgutter") -- git gutter
 	use("majutsushi/tagbar") -- tagbar
-	use("dense-analysis/ale") -- linting
+	--use("dense-analysis/ale") -- linting
 	use("pedrohdz/vim-yaml-folds") -- yaml folds
 	use("ryanoasis/vim-devicons") -- icons
 	use("github/copilot.vim") -- copilot
