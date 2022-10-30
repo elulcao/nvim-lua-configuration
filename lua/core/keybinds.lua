@@ -101,10 +101,6 @@ nmap("<leader>wd", "<cmd>lcd %:p:h<CR>:pwd<CR>")
 -- history
 nmap("<leader>y", "<cmd>history<CR>", { noremap = false })
 
--- copy
-vmap("<C-x>", "<cmd>!pbcopy<CR>")
-nmap("<C-c>", "<cmd>w !pbcopy<CR><CR>")
-
 -- telescope
 nmap("<leader>ff", "<cmd>Telescope find_files<CR>")
 nmap("<leader>fg", "<cmd>Telescope live_grep<CR>")

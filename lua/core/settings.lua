@@ -46,6 +46,7 @@ o.splitbelow = true
 o.splitright = true
 o.clipboard = o.clipboard .. "unnamedplus"
 --o.iskeyword = o.iskeyword .. "-"
+o.hidden = true
 
 -- vim.g
 
@@ -57,12 +58,12 @@ g.session_autosave_on_exit = "yes"
 g.session_autosave_on_change = "yes"
 g.session_command_aliases = 1
 g.vimwiki_list = {
-    {
-        path = HOME .. "/Documents/vimwiki",
-        syntax = "markdown",
-        ext = ".wiki",
-        links_space_char = "_",
-    },
+	{
+		path = HOME .. "/Documents/vimwiki",
+		syntax = "markdown",
+		ext = ".wiki",
+		links_space_char = "_",
+	},
 }
 
 -- vim cmd
