@@ -2,66 +2,71 @@
 
 local HOME = os.getenv("HOME")
 
-local g = vim.g
-local o = vim.o
-local b = vim.bo
-local w = vim.wo
+local g = vim.g -- global variables
+local o = vim.o -- general options
+local b = vim.bo -- buffer-scoped options
+local w = vim.wo -- window-scoped options
+local opt = vim.opt -- global options
 
 -- vim.o
 
-o.runtimepath = vim.fn.stdpath("data") .. "/site/pack/*/start/*," .. o.runtimepath
-o.number = true
-o.relativenumber = true
-o.smarttab = true
-o.autoread = true
-o.termguicolors = true
-o.background = "dark"
-o.signcolumn = "yes"
-o.mouse = "a"
-o.mousemodel = "popup"
 o.t_Co = "256"
-o.guioptions = "egmrti"
-o.gfn = "FiraCode Nerd Font:h14"
-o.wildmode = "list:longest,list:full"
-o.wildignore = "wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,__pycache__,.DS_Store"
-o.encoding = "utf-8"
-o.fileencoding = "utf-8"
-o.fileencodings = "ucs-bom,utf-8,latin1"
-o.fileformat = "unix"
-o.fileformats = "unix,dos,mac"
-o.backup = false
-o.writebackup = false
-o.swapfile = false
-o.backspace = "indent,eol,start"
-o.tabstop = 2
-o.softtabstop = 0
-o.shiftwidth = 2
-o.expandtab = true
-o.ignorecase = true
-o.smartcase = true
-o.colorcolumn = "99"
-o.cursorline = true
--- o.modifiable = true
-o.splitbelow = true
-o.splitright = true
-o.clipboard = o.clipboard .. "unnamedplus"
---o.iskeyword = o.iskeyword .. "-"
-o.hidden = true
+
+-- vim.opt
+
+opt.smarttab = true -- Insert indents automatically
+opt.autoread = true -- reload file if changed outside of vim
+opt.mouse = "a" -- enable mouse support
+opt.mousemodel = "popup"
+opt.guioptions = "egmrti"
+opt.gfn = "FiraCode Nerd Font:h14" -- font
+opt.wildmode = "list:longest,list:full"
+opt.wildignore = "wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,__pycache__,.DS_Store"
+opt.encoding = "utf-8" -- the encoding displayed
+opt.fileencoding = "utf-8" -- the encoding written to file
+opt.fileencodings = "ucs-bom,utf-8,latin1"
+opt.fileformat = "unix"
+opt.fileformats = "unix,dos,mac" -- fileformats
+opt.backup = false -- don't create backup files
+opt.writebackup = false -- don't write backup files
+opt.swapfile = false -- no swap file
+opt.modifiable = true -- allow to modify read-only files
+opt.hidden = true -- allow hidden buffers
+opt.clipboard:append("unnamedplus") -- copy/paste to system clipboard
+opt.iskeyword:append({ "-", "," }) -- treat dash separated words as a word text object"
+opt.colorcolumn = "79,99" -- show vertical line at 79 and 99 columns
+opt.autoindent = true -- autoindent
+opt.expandtab = true -- use spaces instead of tabs
+opt.shiftwidth = 2 -- number of spaces to use for autoindent
+opt.tabstop = 2 -- number of spaces tabs count for
+opt.softtabstop = 0 -- use spaces instead of tabs
+opt.relativenumber = true -- relative line numbers
+opt.number = true -- show line numbers
+opt.wrap = false -- disable line wrapping
+opt.ignorecase = true -- ignore case when searching
+opt.smartcase = true -- smart case when searching
+opt.cursorline = true -- highlight the current cursor line
+opt.termguicolors = true -- enable 24-bit RGB colors
+opt.background = "dark" -- colorschemes that can be light or dark will be made dark
+opt.signcolumn = "yes" -- show sign column so that text doesn't shift
+opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or insert mode start position
+opt.splitright = true -- split vertical window to the right
+opt.splitbelow = true -- split horizontal window to the bottom
 
 -- vim.g
 
-g.mapleader = ","
-g.session_directory = HOME .. "/.config/nvim/sessions"
-g.session_autoload = "no"
-g.session_autosave = "yes"
-g.session_autosave_on_exit = "yes"
-g.session_autosave_on_change = "yes"
-g.session_command_aliases = 1
+g.mapleader = "," -- map leader key to comma
+g.session_directory = HOME .. "/.config/nvim/sessions" -- session directory
+g.session_autoload = "no" -- don't load session automatically
+g.session_autosave = "yes" -- save session automatically
+g.session_autosave_on_exit = "yes" -- save session on exit
+g.session_autosave_on_change = "yes" -- save session on change
+g.session_command_aliases = 1 -- enable command aliases
 g.vimwiki_list = {
 	{
-		path = HOME .. "/Documents/vimwiki",
-		syntax = "markdown",
-		ext = ".wiki",
+		path = HOME .. "/Documents/vimwiki", -- path to vimwiki
+		syntax = "markdown", -- syntax highlighting
+		ext = ".wiki", -- extension
 		links_space_char = "_",
 	},
 }
