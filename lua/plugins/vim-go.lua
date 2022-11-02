@@ -1,11 +1,11 @@
 --
 
-local setup, vimwiki = pcall(require, "vim-go")
+local setup, vimgo = pcall(require, "vim-go")
 if not setup then
 	return
 end
 
-vimwiki.setup({
+vimgo.setup({
 	run = ":GoInstallBinaries",
 	go_list_type = "quickfix",
 	go_fmt_command = "goimports",
