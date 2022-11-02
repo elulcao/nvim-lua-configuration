@@ -71,22 +71,6 @@ nmap("<leader>o", "<cmd>GBrowse<CR>")
 nmap("<leader>nvs", "<cmd>source ~/.config/nvim/init.lua<CR>")
 nmap("<leader>nvr", "<cmd>source ~/.config/nvim/init.lua<CR>:e<CR>")
 
--- session management
-nmap("<leader>ss", "<cmd>SessionSave<CR>")
-nmap("<leader>sl", "<cmd>SessionLoad<CR>")
-nmap("<leader>sd", "<cmd>SessionDelete<CR>")
-nmap("<leader>sc", "<cmd>SessionClear<CR>")
-nmap("<leader>sn", "<cmd>SessionNew<CR>")
-nmap("<leader>sr", "<cmd>SessionRename<CR>")
-nmap("<leader>so", "<cmd>SessionOpen<CR>")
-nmap("<leader>sa", "<cmd>SessionAppend<CR>")
-nmap("<leader>sp", "<cmd>SessionPrevious<CR>")
-nmap("<leader>sn", "<cmd>SessionNext<CR>")
-nmap("<leader>sq", "<cmd>SessionQuit<CR>")
-nmap("<leader>sw", "<cmd>SessionSave<CR>:SessionQuit<CR>")
-nmap("<leader>si", "<cmd>SessionInfo<CR>")
-nmap("<leader>sc", "<cmd>SessionClose<CR>")
-
 -- tabs
 nmap("<leader>tn", "<cmd>tabnew<CR>")
 nmap("<leader>tc", "<cmd>tabclose<CR>")
