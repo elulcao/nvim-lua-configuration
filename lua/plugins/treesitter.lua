@@ -11,6 +11,7 @@ if not setup then
 end
 
 treesitter.update({
+	run = ":TSUpdate",
 	with_sync = true,
 })
 
