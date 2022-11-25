@@ -71,5 +71,8 @@ nvimtree.setup({
 			["__pycache__"] = false,
 			["git"] = false,
 		},
+		exclude = {
+			".gitignore",
+		},
 	},
 })
