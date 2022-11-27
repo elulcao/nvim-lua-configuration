@@ -74,6 +74,7 @@ masonnullls.setup({
 		"eslint",
 		"shellcheck",
 		"luacheck",
+		"luaformatter",
 		"golangci_lint",
 		"rustfmt",
 		"rust_analyzer",
