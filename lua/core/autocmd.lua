@@ -6,6 +6,11 @@ aucmd("BufEnter", {
 	command = "syntax sync maxlines=200",
 })
 
+aucmd("BufEnter", {
+	pattern = "*.env",
+	command = "lua vim.diagnostic.disable(0)",
+})
+
 aucmd("FileType, make", {
 	command = "set noexpandtab",
 })
@@ -25,7 +30,7 @@ aucmd("GuiEnter", {
 
 aucmd("BufRead, BufNewFile", {
 	pattern = "*.go",
-	command = "set tabstop=4 shiftwidth=4 softtabstop=4 colorcolumn=79 noexpandtab",
+	command = "set tabstop=4 shiftwidth=4 softtabstop=4 colorcolumn=99 noexpandtab",
 })
 
 aucmd("FileType, python", {

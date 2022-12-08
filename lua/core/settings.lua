@@ -34,7 +34,7 @@ opt.modifiable = true -- allow to modify read-only files
 opt.hidden = true -- allow hidden buffers
 opt.clipboard:append("unnamedplus") -- copy/paste to system clipboard
 opt.iskeyword:append({ "-", "," }) -- treat dash separated words as a word text object"
-opt.colorcolumn = "79,99" -- show vertical line at 79 and 99 columns
+opt.colorcolumn = "99" -- show vertical line at 99 column
 opt.autoindent = true -- autoindent
 opt.expandtab = true -- use spaces instead of tabs
 opt.shiftwidth = 2 -- number of spaces to use for autoindent
