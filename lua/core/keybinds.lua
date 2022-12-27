@@ -86,10 +86,13 @@ nmap("<leader>wd", "<cmd>lcd %:p:h<CR>:pwd<CR>")
 nmap("<leader>y", "<cmd>history<CR>", { noremap = false })
 
 -- telescope
-nmap("<leader>ff", "<cmd>Telescope find_files<CR>")
-nmap("<leader>fg", "<cmd>Telescope live_grep<CR>")
-nmap("<leader>fb", "<cmd>Telescope buffers<CR>")
-nmap("<leader>fh", "<cmd>Telescope help_tags<CR>")
+nmap("<leader>ff", "<cmd>Telescope find_files<CR>", { desc = "[S]earch [F]iles" })
+nmap("<leader>fg", "<cmd>Telescope live_grep<CR>", { desc = "[S]earch by [G]rep" })
+nmap("<leader>fw", "<cmd>Telescope grep_string<CR>", { desc = "[S]earch current [W]ord" })
+nmap("<leader>fb", "<cmd>Telescope buffers<CR>", { desc = "[ ] Find existing buffers" })
+nmap("<leader>fh", "<cmd>Telescope help_tags<CR>", { desc = "[S]earch [H]elp" })
+nmap("<leader>fd", "<cmd>Telescope diagnostics<CR>", { desc = "[S]earch [D]iagnostics" })
+nmap("<leader>?", "<cmd>Telescope oldfiles<CR>", { desc = "[?] Find recently opened files" })
 
 -- vim-maximizer
 nmap("<leader>z", "<cmd>MaximizerToggle!<CR>")

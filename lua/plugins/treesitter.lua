@@ -43,7 +43,6 @@ treesitterconfigs.setup({
 		"lua",
 		"python",
 		"regex",
-		"rust",
 		"toml",
 		"tsx",
 		"typescript",
