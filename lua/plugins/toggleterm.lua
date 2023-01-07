@@ -42,59 +42,6 @@ end
 vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
 
 local Terminal = require("toggleterm.terminal").Terminal
-local lazygit = Terminal:new({
-	cmd = "lazygit",
-	hidden = true,
-	direction = "tab",
-	on_open = function(_)
-		vim.cmd("startinsert!")
-		vim.cmd("set laststatus=0")
-	end,
-	on_close = function(_)
-		vim.cmd("set laststatus=3")
-	end,
-	count = 99,
-})
-
-function _LAZYGIT_TOGGLE()
-	lazygit:toggle()
-end
-
-local node = Terminal:new({ cmd = "node", hidden = true })
-
-function _NODE_TOGGLE()
-	node:toggle()
-end
-
-local ncdu = Terminal:new({ cmd = "ncdu", hidden = true })
-
-function _NCDU_TOGGLE()
-	ncdu:toggle()
-end
-
-local htop = Terminal:new({ cmd = "htop", hidden = true })
-
-function _HTOP_TOGGLE()
-	htop:toggle()
-end
-
-local python = Terminal:new({ cmd = "python", hidden = true })
-
-function _PYTHON_TOGGLE()
-	python:toggle()
-end
-
-local cargo_run = Terminal:new({ cmd = "cargo run", hidden = true })
-
-function _CARGO_RUN()
-	cargo_run:toggle()
-end
-
-local cargo_test = Terminal:new({ cmd = "cargo test", hidden = true })
-
-function _CARGO_TEST()
-	cargo_test:toggle()
-end
 
 local float_term = Terminal:new({
 	direction = "float",
@@ -207,3 +154,77 @@ end
 
 vim.api.nvim_set_keymap("n", "<m-3>", "<cmd>lua _HORIZONTAL_TERM()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("i", "<m-3>", "<cmd>lua _HORIZONTAL_TERM()<CR>", { noremap = true, silent = true })
+
+local float_lazygit = Terminal:new({
+	cmd = "lazygit",
+	direction = "float",
+	on_open = function(term)
+		vim.cmd("startinsert!")
+		vim.api.nvim_buf_set_keymap(
+			term.bufnr,
+			"n",
+			"<m-4>",
+			"<cmd>4ToggleTerm direction=float<cr>",
+			{ noremap = true, silent = true }
+		)
+		vim.api.nvim_buf_set_keymap(
+			term.bufnr,
+			"t",
+			"<m-4>",
+			"<cmd>4ToggleTerm direction=float<cr>",
+			{ noremap = true, silent = true }
+		)
+		vim.api.nvim_buf_set_keymap(
+			term.bufnr,
+			"i",
+			"<m-4>",
+			"<cmd>4ToggleTerm direction=float<cr>",
+			{ noremap = true, silent = true }
+		)
+	end,
+	count = 4,
+})
+
+function _LAZYGIT_TOGGLE()
+	float_lazygit:toggle()
+end
+
+vim.api.nvim_set_keymap("n", "<m-4>", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("i", "<m-4>", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", { noremap = true, silent = true })
+
+local float_htop = Terminal:new({
+	cmd = "htop",
+	direction = "float",
+	on_open = function(term)
+		vim.cmd("startinsert!")
+		vim.api.nvim_buf_set_keymap(
+			term.bufnr,
+			"n",
+			"<m-5>",
+			"<cmd>5ToggleTerm direction=float<cr>",
+			{ noremap = true, silent = true }
+		)
+		vim.api.nvim_buf_set_keymap(
+			term.bufnr,
+			"t",
+			"<m-5>",
+			"<cmd>5ToggleTerm direction=float<cr>",
+			{ noremap = true, silent = true }
+		)
+		vim.api.nvim_buf_set_keymap(
+			term.bufnr,
+			"i",
+			"<m-5>",
+			"<cmd>5ToggleTerm direction=float<cr>",
+			{ noremap = true, silent = true }
+		)
+	end,
+	count = 5,
+})
+
+function _HTOP_TOGGLE()
+	float_htop:toggle()
+end
+
+vim.api.nvim_set_keymap("n", "<m-5>", "<cmd>lua _HTOP_TOGGLE()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("i", "<m-5>", "<cmd>lua _HTOP_TOGGLE()<CR>", { noremap = true, silent = true })
