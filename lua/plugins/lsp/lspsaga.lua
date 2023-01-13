@@ -5,7 +5,7 @@ if not setup then
 	return
 end
 
-lspsaga.init_lsp_saga({
+lspsaga.setup({
 	move_in_saga = {
 		prev = "<C-k>",
 		next = "<C-j>",
