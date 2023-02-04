@@ -1,6 +1,7 @@
 --
 
 local g = vim.g
+local o = vim.opt
 
 local setup, nvimtree = pcall(require, "nvim-tree")
 if not setup then
@@ -13,8 +14,9 @@ if not nvimwebdevicons_setup then
 end
 
 g.loaded = 1
-g.loaded_netrw = 1
+g.loaded_netrw = 1 -- disable netrw at the very start of your init.lua (strongly advised)
 g.loaded_netrwPlugin = 1
+o.termguicolors = true -- set termguicolors to enable highlight groups
 
 nvimtree.setup({
 	sort_by = "case_sensitive",
@@ -22,8 +24,6 @@ nvimtree.setup({
 	disable_netrw = true,
 	-- hijack netrw window on startup
 	hijack_netrw = true,
-	-- open the tree when running this setup function
-	open_on_setup = true,
 	-- will not open on setup if the filetype is in this list
 	ignore_ft_on_setup = {},
 	-- closes neovim automatically when the tree is the last **WINDOW** in the view
