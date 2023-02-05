@@ -19,6 +19,9 @@ local keymap = vim.keymap
 local on_attach = function(client, bufnr) -- enable kybinds for available lsp server
 	local opts = { noremap = true, silent = true, buffer = bufnr }
 
+	-- Enable completion triggered by <c-x><c-o>
+	vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
+
 	-- set keybinds
 	keymap.set("n", "gf", "<cmd>Lspsaga lsp_finder<CR>", opts) -- show definition, references
 	keymap.set("n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", opts) -- got to declaration

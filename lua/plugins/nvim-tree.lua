@@ -2,6 +2,7 @@
 
 local g = vim.g
 local o = vim.opt
+local v = vim.api
 
 local setup, nvimtree = pcall(require, "nvim-tree")
 if not setup then
@@ -13,10 +14,32 @@ if not nvimwebdevicons_setup then
 	return
 end
 
+local function open_nvim_tree(data)
+	-- buffer is a [No Name]
+	local no_name = data.file == "" and vim.bo[data.buf].buftype == ""
+
+	-- buffer is a directory
+	local directory = vim.fn.isdirectory(data.file) == 1
+
+	if not no_name and not directory then
+		return
+	end
+
+	-- change to the directory
+	if directory then
+		vim.cmd.cd(data.file)
+	end
+
+	-- open the tree
+	require("nvim-tree.api").tree.open()
+end
+
 g.loaded = 1
 g.loaded_netrw = 1 -- disable netrw at the very start of your init.lua (strongly advised)
 g.loaded_netrwPlugin = 1
 o.termguicolors = true -- set termguicolors to enable highlight groups
+
+v.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
 
 nvimtree.setup({
 	sort_by = "case_sensitive",
