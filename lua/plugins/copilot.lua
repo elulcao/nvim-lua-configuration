@@ -6,10 +6,6 @@ if not setup then
 end
 
 copilot.setup({
-	-- copilot_enable = 1,
-	-- copilot_filetypes = {
-	-- ["*"] = { "v:true" },
-	-- },
 	cmp = {
 		enabled = true,
 		method = "getCompletionsCycling",
@@ -21,12 +17,14 @@ copilot.setup({
 		-- trace = "verbose",
 		settings = {
 			advanced = {
-				-- listCount = 10, -- #completions for panel
-				inlineSuggestCount = 3, -- #completions for getCompletions
+				-- listCount = 10, -- # completions for panel
+				inlineSuggestCount = 3, -- # completions for getCompletions
 			},
 		},
 	},
-	filetypes = {
-		["*"] = { "v:true" },
-	},
+	-- filetypes = {
+	-- ["*"] = { "v:true" },
+	-- yaml = { "v:true" },
+	-- yml = { "v:true" },
+	-- },
 })

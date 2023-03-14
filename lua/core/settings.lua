@@ -72,6 +72,7 @@ g.vimwiki_list = {
 		links_space_char = "_",
 	},
 }
+g.copilot_filetypes = { yaml = true, yml = true } -- enable copilot for yaml files
 
 -- vim cmd
 
