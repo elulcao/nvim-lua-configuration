@@ -62,7 +62,7 @@ masonlspconfig.setup({
 		"rust_analyzer",
 		"gopls",
 		"golangci_lint_ls",
-		"sumneko_lua",
+		"lua_ls",
 	},
 	-- auto-install configured servers (with lspconfig)
 	automatic_installation = true, -- not the same as ensure_installed
